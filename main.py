@@ -22,109 +22,114 @@ df = df.groupBy('state').agg(avg('salary').alias('avg_salary')).filter(col('avg_
 # df.printSchema()
 df.show(truncate=False)
 
-# df.createOrReplaceTempView("EMP")
-# df = spark.sql("select employee_name,department,state,salary,age,bonus from EMP ORDER BY department asc").show(
-#     truncate=False)
 
-# data = [("James", "Sales", 3000), \
-#     ("Michael", "Sales", 4600), \
-#     ("Robert", "Sales", 4100), \
-#     ("Maria", "Finance", 3000), \
-#     ("James", "Sales", 3000), \
-#     ("Scott", "Finance", 3300), \
-#     ("Jen", "Finance", 3900), \
-#     ("Jeff", "Marketing", 3000), \
-#     ("Kumar", "Marketing", 2000), \
-#     ("Saif", "Sales", 4100) ,\
-# ("Saif", "Sales", 4200) \
-#   ]
-#
-# # Create DataFrame
-# columns= ["employee_name", "department", "salary"]
-# df = spark.createDataFrame(data = data, schema = columns)
-# df = df.drop_duplicates(['employee_name'])
-# df.show(truncate=False)
 
-# data = [
-#     (("James", "", "Smith"), ["Java", "Scala", "C++"], "OH", "M"),
-#     (("Anna", "Rose", ""), ["Spark", "Java", "C++"], "NY", "F"),
-#     (("Julia", "", "Williams"), ["CSharp", "VB"], "OH", "F"),
-#     (("Maria", "Anne", "Jones"), ["CSharp", "VB"], "NY", "M"),
-#     (("Jen", "Mary", "Brown"), ["CSharp", "VB"], "NY", "M"),
-#     (("Mike", "Mary", "Williams"), ["Python", "VB"], "OH", "M")
-# ]
-#
-# schema = StructType([
-#     StructField('name', StructType([
-#         StructField('firstname', StringType(), True),
-#         StructField('middlename', StringType(), True),
-#         StructField('lastname', StringType(), True)
-#     ])),
-#     StructField('languages', ArrayType(StringType()), True),
-#     StructField('state', StringType(), True),
-#     StructField('gender', StringType(), True)
-# ])
-#
-# df = spark.createDataFrame(data=data, schema=schema)
-# df = df.withColumn("gender", when(col("gender") == 'M', 'Male').otherwise('Female'))
-# # df.printSchema()
-# df.show(truncate=False)
-# schema=StructType([
-#     StructField('firstname',StringType(), True),
-# StructField('lastname',StringType(), True),
-# StructField('middlename',StringType(), True),
-# ])
-#
-# data= [('nama','ummadi','sole'),('kasim','shaik','chalo')]
-#
-# df = spark.createDataFrame(data, schema =schema)
-# # df= df.sort(df.firstname.asc())
-# df= df.filter(df.firstname.contains('ka'))
-# print(df.show())
 
-# data = [('James', 'hero', "FA"), ('cameron', 'list', 'ZA'), ('hello', 'sam', 'SA')]
-# states = {'FA': 'failure', 'ZA': 'zerocross', 'SA': 'southafrica'}
-# broadcastVariables = spark.sparkContext.broadcast(states)
-# schema = ["name", "caption", "state"]
-# df = spark.createDataFrame(data, schema=schema)
-#
-# print(df.show())
-#
-#
-# def is_convert(value):
-#     return broadcastVariables.value[value]
-#
-#
-# df = df.rdd.map(lambda x: (x[0], x[1], is_convert(x[2]))).toDF(schema)
-# filteredDf = df.where((df['state'].isin(broadcastVariables.value)))
-# print()
 
-# data = [1, 2, 3, 4, 4, 5, 4, 48]
-# df = spark.sparkContext.parallelize(data)
-# accum = spark.sparkContext.accumulator(0)
-# # def run(x):
-# #     global accum
-# #     accum += x
-# #     return accum
-# # df.foreach(run)
-# # df = df.filter(lambda x: x)
-# # print(df.collect())
-# df.foreach(lambda x: accum.count(x))
-#
-# print(accum.value)
-#
-# print(str(df.getNumPartitions()))
-# df = df.repartition(4)
-# print(str(df.getNumPartitions()))
+
+df.createOrReplaceTempView("EMP")
+df = spark.sql("select employee_name,department,state,salary,age,bonus from EMP ORDER BY department asc").show(
+    truncate=False)
+
+data = [("James", "Sales", 3000), \
+    ("Michael", "Sales", 4600), \
+    ("Robert", "Sales", 4100), \
+    ("Maria", "Finance", 3000), \
+    ("James", "Sales", 3000), \
+    ("Scott", "Finance", 3300), \
+    ("Jen", "Finance", 3900), \
+    ("Jeff", "Marketing", 3000), \
+    ("Kumar", "Marketing", 2000), \
+    ("Saif", "Sales", 4100) ,\
+("Saif", "Sales", 4200) \
+  ]
+
+# Create DataFrame
+columns= ["employee_name", "department", "salary"]
+df = spark.createDataFrame(data = data, schema = columns)
+df = df.drop_duplicates(['employee_name'])
+df.show(truncate=False)
+
+data = [
+    (("James", "", "Smith"), ["Java", "Scala", "C++"], "OH", "M"),
+    (("Anna", "Rose", ""), ["Spark", "Java", "C++"], "NY", "F"),
+    (("Julia", "", "Williams"), ["CSharp", "VB"], "OH", "F"),
+    (("Maria", "Anne", "Jones"), ["CSharp", "VB"], "NY", "M"),
+    (("Jen", "Mary", "Brown"), ["CSharp", "VB"], "NY", "M"),
+    (("Mike", "Mary", "Williams"), ["Python", "VB"], "OH", "M")
+]
+
+schema = StructType([
+    StructField('name', StructType([
+        StructField('firstname', StringType(), True),
+        StructField('middlename', StringType(), True),
+        StructField('lastname', StringType(), True)
+    ])),
+    StructField('languages', ArrayType(StringType()), True),
+    StructField('state', StringType(), True),
+    StructField('gender', StringType(), True)
+])
+
+df = spark.createDataFrame(data=data, schema=schema)
+df = df.withColumn("gender", when(col("gender") == 'M', 'Male').otherwise('Female'))
+# df.printSchema()
+df.show(truncate=False)
+schema=StructType([
+    StructField('firstname',StringType(), True),
+StructField('lastname',StringType(), True),
+StructField('middlename',StringType(), True),
+])
+
+data= [('nama','ummadi','sole'),('kasim','shaik','chalo')]
+
+df = spark.createDataFrame(data, schema =schema)
+# df= df.sort(df.firstname.asc())
+df= df.filter(df.firstname.contains('ka'))
+print(df.show())
+
+data = [('James', 'hero', "FA"), ('cameron', 'list', 'ZA'), ('hello', 'sam', 'SA')]
+states = {'FA': 'failure', 'ZA': 'zerocross', 'SA': 'southafrica'}
+broadcastVariables = spark.sparkContext.broadcast(states)
+schema = ["name", "caption", "state"]
+df = spark.createDataFrame(data, schema=schema)
+
+print(df.show())
+
+
+def is_convert(value):
+    return broadcastVariables.value[value]
+
+
+df = df.rdd.map(lambda x: (x[0], x[1], is_convert(x[2]))).toDF(schema)
+filteredDf = df.where((df['state'].isin(broadcastVariables.value)))
+print()
+
+data = [1, 2, 3, 4, 4, 5, 4, 48]
+df = spark.sparkContext.parallelize(data)
+accum = spark.sparkContext.accumulator(0)
+# def run(x):
+#     global accum
+#     accum += x
+#     return accum
+# df.foreach(run)
+# df = df.filter(lambda x: x)
 # print(df.collect())
-# df1 = spark.sparkContext.textFile("./test.txt")
-# print(str(df1.getNumPartitions()))
-# # print(df1.saveAsTextFile("./partition.txt"))
-#
-# df2 = df1.flatMap(lambda x: x.split(' '))
-# print(df2.collect())
-# df3 = df2.map(lambda x: (x, 1))
-# df4 = df1.map(lambda x: (x[0], x[1])).sortByKey()
-# df5 = df3.reduceByKey(lambda x, b: x + b)
-# df6 = df5.filter(lambda x: 'o' in x[0])
-# print(df6.collect())
+df.foreach(lambda x: accum.count(x))
+
+print(accum.value)
+
+print(str(df.getNumPartitions()))
+df = df.repartition(4)
+print(str(df.getNumPartitions()))
+print(df.collect())
+df1 = spark.sparkContext.textFile("./test.txt")
+print(str(df1.getNumPartitions()))
+# print(df1.saveAsTextFile("./partition.txt"))
+
+df2 = df1.flatMap(lambda x: x.split(' '))
+print(df2.collect())
+df3 = df2.map(lambda x: (x, 1))
+df4 = df1.map(lambda x: (x[0], x[1])).sortByKey()
+df5 = df3.reduceByKey(lambda x, b: x + b)
+df6 = df5.filter(lambda x: 'o' in x[0])
+print(df6.collect())
