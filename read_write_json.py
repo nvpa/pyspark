@@ -4,8 +4,8 @@ from pyspark.sql.types import IntegerType, StructField, StringType, DoubleType, 
 
 spark = SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
 
-# df =spark.read.json("./zipcodes.json")
-# df.show()
+df =spark.read.json("./zipcodes.json")
+df.show()
 # if we use custom schema
 schema = StructType([
       StructField("RecordNumber",IntegerType(),True),
@@ -34,3 +34,8 @@ df =spark.read.format("json").schema(schema).load('./zipcodes.json')
 # df.show()
 
 df.write.mode('overwrite').json('zipcode_json')
+
+# we can use multiline
+df = spark.read.option('multiline', True).json('./multiline_zipcodes.json')
+df.printSchema()
+df.show()
