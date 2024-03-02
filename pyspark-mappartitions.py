@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-author SparkByExamples.com
+@author: naga
 """
 
 from pyspark.sql import SparkSession
-spark = SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
+spark = SparkSession.builder.appName('Examples.com').getOrCreate()
 data = [('James','Smith','M',3000),
   ('Anna','Rose','F',4100),
   ('Robert','Williams','M',6200), 

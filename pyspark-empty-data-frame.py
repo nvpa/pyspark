@@ -1,15 +1,13 @@
 # -*- coding: utf-8 -*-
 '''
-Created on Sat Jan 11 19:38:27 2020
-
-@author: sparkbyexamples.com
+@author: naga
 '''
 
 import pyspark
 from pyspark.sql import SparkSession
 from pyspark.sql.types import StructType,StructField, StringType
 
-spark = SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
+spark = SparkSession.builder.appName('Examples.com').getOrCreate()
 
 schema = StructType([
   StructField('firstname', StringType(), True),

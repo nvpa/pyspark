@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-author SparkByExamples.com
+@author: naga
 """
 
 import pyspark
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import expr
-spark = SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
+spark = SparkSession.builder.appName('Examples.com').getOrCreate()
 
 data = [("Banana",1000,"USA"), ("Carrots",1500,"USA"), ("Beans",1600,"USA"), \
       ("Orange",2000,"USA"),("Orange",2000,"USA"),("Banana",400,"China"), \

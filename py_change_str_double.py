@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-author SparkByExamples.com
+@author: naga
 """
 
 from pyspark.sql import SparkSession
 from pyspark.sql.types import DoubleType, IntegerType
 # Create SparkSession
 spark = SparkSession.builder \
-          .appName('SparkByExamples.com') \
+          .appName('Examples.com') \
           .getOrCreate()
 
 simpleData = [("James","34","true","M","3000.6089"),

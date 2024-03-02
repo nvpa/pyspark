@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-Created on Sat Jan 11 19:38:27 2020
-
-@author: sparkbyexamples.com
+@author: naga
 '''
 
 import pyspark
@@ -13,7 +11,7 @@ from pyspark.sql.functions import *
 columns = ["language","users_count"]
 data = [("Java", "20000"), ("Python", "100000"), ("Scala", "3000")]
 
-spark = SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
+spark = SparkSession.builder.appName('Examples.com').getOrCreate()
 rdd = spark.sparkContext.parallelize(data)
 
 dfFromRDD1 = rdd.toDF()

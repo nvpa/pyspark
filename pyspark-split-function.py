@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-author SparkByExamples.com
+@author: naga
 """
 
 import pyspark
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import split, col
-spark=SparkSession.builder.appName("sparkbyexamples").getOrCreate()
+spark=SparkSession.builder.appName("spark").getOrCreate()
 
 data=data = [('James','','Smith','1991-04-01'),
   ('Michael','Rose','','2000-05-19'),

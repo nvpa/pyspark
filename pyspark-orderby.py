@@ -1,15 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sat Jun 20 07:45:04 2020
-
-@author: NNK
+@author: naga
 """
 
 import pyspark
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, asc,desc
 
-spark = SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
+spark = SparkSession.builder.appName('Examples.com').getOrCreate()
 
 simpleData = [("James","Sales","NY",90000,34,10000), \
     ("Michael","Sales","NY",86000,56,20000), \

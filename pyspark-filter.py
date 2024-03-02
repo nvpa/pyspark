@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sat Jun 13 21:08:30 2020
-
-@author: NNK
+@author: naga
 """
 
 import pyspark
@@ -10,7 +8,7 @@ from pyspark.sql import SparkSession
 from pyspark.sql.types import StructType,StructField, StringType, IntegerType, ArrayType
 from pyspark.sql.functions import col,array_contains
 
-spark = SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
+spark = SparkSession.builder.appName('Examples.com').getOrCreate()
 
 arrayStructureData = [
         (("James","","Smith"),["Java","Scala","C++"],"OH","M"),

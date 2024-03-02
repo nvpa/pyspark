@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-author SparkByExamples.com
+@author: naga
 """
 
 import pyspark
 from pyspark.sql import SparkSession
-spark = SparkSession.builder.appName('machinelearninggeeks.com').getOrCreate()
+spark = SparkSession.builder.appName('machine.com').getOrCreate()
   
 emp = [(1,"Smith",-1,"2018","10","M",3000), \
     (2,"Rose",1,"2010","20","M",4000), \

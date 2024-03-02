@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-author SparkByExamples.com
+@author: naga
 """
 
 from pyspark.sql import SparkSession, Row
@@ -17,7 +17,7 @@ p2=Person("Alice", 35)
 print(p1.name +","+p2.name)
 
 #PySpark Example
-spark = SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
+spark = SparkSession.builder.appName('Examples.com').getOrCreate()
 
 rdd2 = spark.sparkContext.parallelize([],10)
 

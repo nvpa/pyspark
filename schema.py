@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Oct 24 22:42:50 2019
-
-@author: prabha
+@author: naga
 """
 
 import pyspark
@@ -11,7 +9,7 @@ from pyspark.sql.functions import col
 from pyspark.sql.functions import to_timestamp
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType,DateType
 
-spark = SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
+spark = SparkSession.builder.appName('Spark').getOrCreate()
 
 schema = StructType([
             StructField("city", StringType(), True),

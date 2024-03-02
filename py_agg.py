@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Jun 14 10:20:19 2020
 
-@author: prabha
+
+@author: naga
 """
 
 import pyspark
@@ -13,7 +13,7 @@ from pyspark.sql.functions import first, last, kurtosis, min, mean, skewness
 from pyspark.sql.functions import stddev, stddev_samp, stddev_pop, sumDistinct
 from pyspark.sql.functions import variance,var_samp,  var_pop
 
-spark = SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
+spark = SparkSession.builder.appName('example.com').getOrCreate()
 
 simpleData = [("James", "Sales", 3000),
     ("Michael", "Sales", 4600),

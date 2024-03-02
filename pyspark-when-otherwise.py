@@ -1,14 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sat Jun 13 21:08:30 2020
-
-@author: NNK
+@author: naga
 """
 
 import pyspark
 from pyspark.sql import SparkSession
 
-spark = SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
+spark = SparkSession.builder.appName('Spark').getOrCreate()
 
 data = [("James","","Smith","36636","M",60000),
         ("Michael","Rose","","40288","M",70000),

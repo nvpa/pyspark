@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Oct 24 22:42:50 2019
-
-@author: Naveen
+@author: naga
 """
 
 import pyspark

@@ -1,15 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Jun 14 10:20:19 2020
-
-@author: prabha
+@author: naga
 """
 
 import pyspark
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col,sum,avg,max
 
-spark = SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
+spark = SparkSession.builder.appName('Examples.com').getOrCreate()
 
 simpleData = [("James","Sales","NY",90000,34,10000),
     ("Michael","Sales","NY",86000,56,20000),

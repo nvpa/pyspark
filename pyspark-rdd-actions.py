@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Jun 14 10:20:19 2020
+@author: naga
 """
 
 from pyspark.sql import SparkSession
-spark = SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
+spark = SparkSession.builder.appName('Examples.com').getOrCreate()
 data=[("Z", 1),("A", 20),("B", 30),("C", 40),("B", 30),("B", 60)]
 inputRDD = spark.sparkContext.parallelize(data)
   

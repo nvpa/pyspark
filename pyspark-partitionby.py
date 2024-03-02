@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
 """
-author SparkByExamples.com
+@author: naga
 """
 
 from pyspark.sql import SparkSession
 
 # Create SparkSession
 spark = SparkSession.builder \
-          .appName('SparkByExamples.com') \
+          .appName('Examples.com') \
           .getOrCreate()
 
 df=spark.read.option("header",True) \
-        .csv("C:/apps/sparkbyexamples/src/pyspark-examples/resources/simple-zipcodes.csv")
+        .csv("C:/apps/examples/src/pyspark-examples/resources/simple-zipcodes.csv")
 
           
 df.show()

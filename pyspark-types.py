@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Jun 14 10:20:19 2020
+@author: naga
 """
 
 
@@ -8,7 +8,7 @@ from pyspark.sql import SparkSession
 from pyspark.sql.types import DataType
 from pyspark.sql.types import StructType, StructField, StringType, ArrayType, IntegerType
 
-spark = SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
+spark = SparkSession.builder.appName('Spark').getOrCreate()
 
 from pyspark.sql.types import ArrayType,IntegerType
 arrayType = ArrayType(IntegerType(),False)

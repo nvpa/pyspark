@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-author SparkByExamples.com
+@author: naga
 """
 from pyspark.sql import SparkSession,Row
-spark = SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
+spark = SparkSession.builder.appName('Examples.com').getOrCreate()
 
 data=[("James",23),("Ann",40)]
 df=spark.createDataFrame(data).toDF("name.fname","gender")

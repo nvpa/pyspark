@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-author SparkByExamples.com
-"""
+@author: naga"""
 
 import pyspark
 from pyspark.sql import SparkSession
 
-spark = SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
+spark = SparkSession.builder.appName('Examples.com').getOrCreate()
 rdd=spark.sparkContext.parallelize([1,2,3,4,5])
 
 rddCollect = rdd.collect()

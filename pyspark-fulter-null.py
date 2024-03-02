@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-author SparkByExamples.com
+@author: naga
 """
 
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col
 spark = SparkSession.builder \
     .master("local[1]") \
-    .appName("SparkByExamples.com") \
+    .appName("Examples.com") \
     .getOrCreate()
 
 data = [
